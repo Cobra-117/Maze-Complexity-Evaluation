@@ -16,7 +16,7 @@ public class DepthFirstSearch : MazeAlgo
 
     void Start()
     {
-        Generate(20, 20);
+        //Generate(20, 20);
     }
 
     public override void Generate(int height, int width)

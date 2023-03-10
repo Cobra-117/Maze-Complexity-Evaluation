@@ -25,9 +25,10 @@ public abstract class MazeAlgo : MonoBehaviour
     {
         for (int y = 0; y < maze.GetLongLength(0); y++) {
             for (int x = 0; x < maze.GetLongLength(1); x++) {
-                Debug.Log("has been ask to display: " + maze[y, x].ToString());
                 tilemap.SetTile(new Vector3Int(x, -y, 0), tiles[maze[y, x]]);
             }
         }
     }
+
+    public int[,] GetMaze() { return maze;}
 }

@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 475967564}
   - component: {fileID: 475967565}
+  - component: {fileID: 475967566}
   m_Layer: 0
   m_Name: SideWinderGen
   m_TagString: Untagged
@@ -230,6 +231,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4c61427c82bbf8439189f69e1ebb5d2, type: 2}
   - {fileID: 11400000, guid: 3595e6b712a0c594dbd61cd31404360c, type: 2}
   - {fileID: 11400000, guid: a04d6464e2c3c94448a1bfcc37c9d5ef, type: 2}
+--- !u!114 &475967566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475967562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6944480bee290a64ab44a1a00695e848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeAlgo: {fileID: 475967565}
+  mazeWidth: 200
+  mazeLenght: 200
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +460,7 @@ GameObject:
   m_Component:
   - component: {fileID: 607158650}
   - component: {fileID: 607158651}
+  - component: {fileID: 607158652}
   m_Layer: 0
   m_Name: BinTreeGenerator
   m_TagString: Untagged
@@ -496,6 +513,21 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4c61427c82bbf8439189f69e1ebb5d2, type: 2}
   - {fileID: 11400000, guid: 3595e6b712a0c594dbd61cd31404360c, type: 2}
   - {fileID: 11400000, guid: a04d6464e2c3c94448a1bfcc37c9d5ef, type: 2}
+--- !u!114 &607158652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607158649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6944480bee290a64ab44a1a00695e848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeAlgo: {fileID: 607158651}
+  mazeWidth: 200
+  mazeLenght: 200
 --- !u!1 &824923141
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,13 +538,14 @@ GameObject:
   m_Component:
   - component: {fileID: 824923143}
   - component: {fileID: 824923142}
+  - component: {fileID: 824923144}
   m_Layer: 0
   m_Name: DFS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &824923142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,3 +592,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &824923144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824923141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6944480bee290a64ab44a1a00695e848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mazeAlgo: {fileID: 824923142}
+  mazeWidth: 200
+  mazeLenght: 200
