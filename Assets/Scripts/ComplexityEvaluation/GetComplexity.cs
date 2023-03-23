@@ -26,9 +26,30 @@ public class GetComplexity : MonoBehaviour
         if (debug == true) {
             Debug.Log("Solution lenght: " + 
             GetSolutionLenght(maze).ToString());
+            Debug.Log("Number of corridors:" +
+            GetNumberofCorridors(maze).ToString());
             debug = false;
         }
     }
+
+    int GetNumberofCorridors(int [,] maze)
+    {
+        int res = 0;
+
+        for (int y = 0; y < maze.GetLongLength(0); y++) {
+            for (int x = 0; x < maze.GetLongLength(1); x++) {
+                if (maze[y,x] == (int)MazeAlgo.TileTypes.NE ||
+                maze[y,x] == (int)MazeAlgo.TileTypes.NS||
+                maze[y,x] == (int)MazeAlgo.TileTypes.NW ||
+                maze[y,x] == (int)MazeAlgo.TileTypes.ES ||
+                maze[y,x] == (int)MazeAlgo.TileTypes.EW ||
+                maze[y,x] == (int)MazeAlgo.TileTypes.SW)
+                    res += 1;
+            }
+        }
+        return res;
+    }
+
     int GetCyclomaticComplexity(int[,] maze)
     {
         // E – N + 2, where E = number of edges, N = number of nodes

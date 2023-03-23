@@ -26,7 +26,7 @@ public class DepthFirstSearch : MazeAlgo
         visitedTiles.Add(currentTile);
         while (true) {
             while (OpenRandomNeighbor(height, width));
-            Goback();
+            Goback(height, width);
             if (currentTile.x == 0 && currentTile.y == 0) {
                 DisplayMaze();
                 return;
@@ -35,16 +35,18 @@ public class DepthFirstSearch : MazeAlgo
         
     }
 
-    public bool Goback()
+    public bool Goback(int height, int width)
     {
         for (int i = 0; i < visitedTiles.Count; i++) 
         {
             currentTile = visitedTiles[visitedTiles.Count - 1];
-            if (GetAvNeighbors(currentTile.y, currentTile.x).Count != 0) {
+            if (GetAvNeighbors(height, width).Count != 0) {
+                Debug.Log("Went back to: "  + currentTile.y.ToString() + " " + currentTile.x.ToString());
                 return true;
             }
             visitedTiles.RemoveAt(visitedTiles.Count - 1);
         }
+        Debug.Log("Went back to: "  + currentTile.y.ToString() + " " + currentTile.x.ToString());
         return false;
     }
 
@@ -79,6 +81,7 @@ public class DepthFirstSearch : MazeAlgo
                 break;
             default: break;
         }
+        Debug.Log("Opened to: "  + currentTile.y.ToString() + " " + currentTile.x.ToString());
         visitedTiles.Add(currentTile);
         return true;
     }
