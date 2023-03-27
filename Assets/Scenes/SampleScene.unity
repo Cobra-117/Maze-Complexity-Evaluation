@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeAlgo: {fileID: 475967565}
-  mazeWidth: 50
-  mazeLenght: 50
+  mazeWidth: 150
+  mazeLenght: 150
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,5 +605,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeAlgo: {fileID: 824923142}
-  mazeWidth: 25
-  mazeLenght: 25
+  mazeWidth: 150
+  mazeLenght: 150
