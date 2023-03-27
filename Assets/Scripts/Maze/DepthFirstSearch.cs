@@ -41,12 +41,10 @@ public class DepthFirstSearch : MazeAlgo
         {
             currentTile = visitedTiles[visitedTiles.Count - 1];
             if (GetAvNeighbors(height, width).Count != 0) {
-                Debug.Log("Went back to: "  + currentTile.y.ToString() + " " + currentTile.x.ToString());
                 return true;
             }
             visitedTiles.RemoveAt(visitedTiles.Count - 1);
         }
-        Debug.Log("Went back to: "  + currentTile.y.ToString() + " " + currentTile.x.ToString());
         return false;
     }
 
@@ -81,7 +79,6 @@ public class DepthFirstSearch : MazeAlgo
                 break;
             default: break;
         }
-        Debug.Log("Opened to: "  + currentTile.y.ToString() + " " + currentTile.x.ToString());
         visitedTiles.Add(currentTile);
         return true;
     }

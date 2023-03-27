@@ -52,8 +52,6 @@ public enum Directions
             openingX = x;
         else {
             openingX = Random.Range(carvedTiles[0], carvedTiles[carvedTiles.Count - 1] + 1);
-            Debug.Log("min : " + carvedTiles[0].ToString());
-            Debug.Log("min : " + carvedTiles[carvedTiles.Count - 1]);
         }
         maze[y , openingX] -= (int)TileTypes.N;
         maze[y - 1, openingX] -= (int)TileTypes.S;

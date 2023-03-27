@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GetComplexity : MonoBehaviour
 {
@@ -8,27 +9,30 @@ public class GetComplexity : MonoBehaviour
 
     public int mazeWidth = 10;
     public int mazeLenght= 10;
-    bool debug = true;
+    bool measureMode = true;
     int[,] maze;
+    int t1;
+    int t2;
     // Start is called before the first frame update
     void Start()
     {
+        long t1 = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         mazeAlgo.Generate(mazeWidth, mazeLenght);
+        long t2 = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        Debug.Log("Gen time: " + (t2 - t1).ToString());
         maze = mazeAlgo.GetMaze();
         Debug.Log("Cyclomatic complexity: " + 
         GetCyclomaticComplexity(maze).ToString());
-        /*Debug.Log("Solution lenght: " + 
-        GetSolutionLenght(maze).ToString());*/
     }
 
     void Update()
     {
-        if (debug == true) {
+        if (measureMode == true) {
             Debug.Log("Solution lenght: " + 
             GetSolutionLenght(maze).ToString());
             Debug.Log("Number of corridors:" +
             GetNumberofCorridors(maze).ToString());
-            debug = false;
+            measureMode = false;
         }
     }
 
@@ -87,35 +91,28 @@ public class GetComplexity : MonoBehaviour
         while (hasIndexed == true) {
             hasIndexed = false;
             currentDistance += 1;
-            Debug.Log("Indexing: " + currentDistance.ToString());
             for (int y = 0; y < maze.GetLongLength(0); y++) {   
                 for (int x = 0; x < maze.GetLongLength(1); x++) {
                     if (distanceMap[y, x] != currentDistance -1)
                         continue;
-                    //Debug.Log("Found end: ");
                     if (!HasNorthEdge(maze[y, x]) && distanceMap[y - 1, x] == -1) {
                         hasIndexed = true;
                         distanceMap[y - 1, x] = currentDistance;
-                        Debug.Log("Indexed North: " + (y - 1).ToString() + " " + x.ToString());
                     }
                     if (!HasEastEdge(maze[y, x]) && distanceMap[y, x + 1] == -1) {
                         hasIndexed = true;
                         distanceMap[y, x + 1] = currentDistance;
-                        Debug.Log("Indexed East: " + (y).ToString() + " " + (x+1).ToString());
                     }
                     if (!HasSouthEdge(maze[y, x]) && distanceMap[y + 1, x] == -1) {
                         hasIndexed = true;
                         distanceMap[y + 1, x] = currentDistance;
-                        Debug.Log("Indexed South: " + (y+1).ToString() + " " + (x).ToString());
                     }
                     if (!HasWestEdge(maze[y, x]) && distanceMap[y, x - 1] == -1) {
                         hasIndexed = true;
                         distanceMap[y, x - 1] = currentDistance;
-                        Debug.Log("Indexed West: " + (y).ToString() + " " + (x-1).ToString());
                     }
                 }
             }
-            //return distanceMap;
         }
         return distanceMap;
     }

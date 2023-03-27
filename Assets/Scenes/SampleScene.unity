@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &475967564
 Transform:
   m_ObjectHideFlags: 0
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeAlgo: {fileID: 475967565}
-  mazeWidth: 150
-  mazeLenght: 150
+  mazeWidth: 50
+  mazeLenght: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,8 +526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeAlgo: {fileID: 607158651}
-  mazeWidth: 150
-  mazeLenght: 150
+  mazeWidth: 1500
+  mazeLenght: 1500
 --- !u!1 &824923141
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,7 +545,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &824923142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,5 +605,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mazeAlgo: {fileID: 824923142}
-  mazeWidth: 150
-  mazeLenght: 150
+  mazeWidth: 500
+  mazeLenght: 500
